@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    
-  </body>
-  </html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TODO List</h1>
+        <div class="todo-form">
+            <input type="text" id="todo-input-title" placeholder="Titulo da tarefa">
+            <textarea id="todo-input-description" placeholder="Descrição da tarefa"></textarea>
+            <button onclick="addTask()">ADICIONAR</button>
+        </div>
+        <div class="filter">
+            <input type="text" id="filter-input" placeholder="Pesquisar tarefa" onkeyup="filterTasks()">
+        </div>
+        <ul id="todo-list"></ul>
+        <div class="pagination">
+            <button id="prev-page" onclick="changePage(-1)">ANTERIOR</button>
+            <span id="page-info"></span>
+            <button id="next-page" onclick="changePage(1)">PROXIMA</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

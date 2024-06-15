@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e6e5ff;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.wrapper {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    width: 85%;
+    max-width: 450px;
+    overflow-y: auto;
+    height: 85vh;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #7b52b0;
+    font-size: 28px;
+    border-bottom: 4px solid #7b52b0;
+    padding-bottom: 20px;
+}
+
+.filter,
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+input,
+textarea {
+    padding: 15px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    background: #f4f4f4;
+    color: #222;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #7b52b0;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 250px;
+}
+
+button {
+    padding: 15px;
+    border: 1px solid #7b52b0;
+    border-radius: 10px;
+    background-color: #ac6dff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #7b52b0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f8f8f8;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    word-wrap: break-word;
+}
+
+li.editing {
+    background-color: #dcdcdc; 
+    border-color: #7b52b0;
+}
+
+li div {
+    text-align: left;
+    color: #222;
+}
+
+li button {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+li button:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.todo-form {
+    padding: 20px;
+}
+
+
+@media (max-width: 400px) {
+    .wrapper {
+        width: 100%;
+        margin: 15px;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #7b52b0;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+}
+
+.pagination button:disabled {
+    background-color: #bbb;
+    color: #666;
+    cursor: not-allowed;
+}
