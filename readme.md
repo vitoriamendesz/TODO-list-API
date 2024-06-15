@@ -1,17 +1,55 @@
-TO-DO List
-Esta é uma aplicação de To-Do List que se integra com uma API de tarefas.
+# Task Management App with Express
 
-Descrição do Projeto
-O objetivo deste projeto é criar uma aplicação de To-Do List utilizando HTML, CSS e JavaScript, integrada com uma API de tarefas. A aplicação permite listar, adicionar, editar, remover e filtrar tarefas.
+Este é um API construída com **Node.js**, **Typescript**, **Express**, **Prisma**, **Swagger** e **JWT** para gerenciamento de tarefas.
 
-A pasta da API foi clonada do repositório do meu professor: express-todo-list.
+## Entidades
 
-Instruções
-Para rodar o projeto:
+### Tarefa
 
-Certifique-se de estar na pasta da API.
-Configure seu ambiente criando um arquivo .env.
-Instale as dependências com o comando npm i.
-Certifique-se de que o Docker está em execução e execute npm run setup no terminal.
-Inicie o projeto com o comando npm run start.
-Após isso, o sistema deverá responder que o servidor está rodando. Então, abra a página index.html no navegador para testar todas as funcionalidades da página de To-Do List, tais como listar, adicionar, editar, remover e filtrar tarefas.
+- Atributos: ID, title, description.
+
+## Inicialização
+
+1. Configure seu ambiente criando um arquivo `.env` (você pode copiar o conteúdo de `.env.example` e colá-lo no novo arquivo).
+2. Rode o comando `npm i`.
+3. Certifique-se de que o Docker está em execução e execute `npm run setup` no terminal.
+4. Para iniciar a aplicação, execute `npm run start`.
+5. Para acessar a documentação da API, acesse `http://localhost:3000/api`.
+
+## Acessar banco de dados
+
+É possível verificar os dados salvos no banco através do Terminal do container docker, basta acessar o terminal do container "express-todo-list-db-*" e rodar os comandos:
+
+1. `psql -d taskdb -U admin` para acessar o banco de dados. OBS: devem estar de acordo com o configurado no `.env`
+2. `select * from public."Task";` para acessar os dados salvos no banco Task
+
+## Rotas
+
+### Tarefas (Tasks)
+
+- **POST /tasks**
+
+  - Cria uma nova tarefa.
+
+- **GET /tasks**
+
+  - Retorna todas as tarefas.
+
+- **GET /tasks/longest-description**
+
+  - Retorna a tarefa com a maior descrição.
+
+- **GET /tasks/average-conclusion**
+
+  - Retorna a média de conclusão das tarefas.
+
+- **GET /tasks/id**
+
+  - Retorna uma tarefa por ID.
+
+- **PATCH /tasks/id**
+
+  - Atualiza uma tarefa por ID.
+
+- **DELETE /tasks/id**
+  - Deleta uma tarefa por ID.
